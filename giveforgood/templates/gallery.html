@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white p-10 rounded-lg shadow-lg">
+    <h1 class="text-4xl font-bold mb-8 text-center">Our Gallery</h1>
+    
+    <p class="text-lg text-gray-700 mb-8 text-center">
+        See the impact of your contributions and the moments we cherish.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {% for img_url in images %}
+        <div class="rounded-lg overflow-hidden shadow-md group">
+            <img src="{{ img_url }}" alt="Gallery Image" class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105">
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="text-3xl font-bold mt-12 mb-6 text-center">Videos</h2>
+    <p class="text-lg text-gray-700 mb-8 text-center">
+        Check back soon to see videos of our work in action!
+    </p>
+
+</div>
+{% endblock %}

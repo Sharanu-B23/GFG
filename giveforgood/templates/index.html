@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="relative h-screen w-full">
+    
+    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=1740&auto=format&fit=crop" 
+         alt="Charity" 
+         class="absolute inset-0 w-full h-full object-cover z-0">
+    
+    <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+
+    <div class="relative z-20 h-full flex flex-col justify-center items-center text-center text-white px-6">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">
+            We Fight Cancer, One Life at a Time.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8">
+            Your single click can make a huge difference. Join us in our mission.
+        </p>
+        <a href="{{ url_for('donate') }}" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-700 transition-all">
+            Make a Donation
+        </a>
+    </div>
+</div>
+
+<div class="bg-white py-16">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">Who Are We?</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+            Give for Good is a fundraising initiative dedicated to providing support and resources to communities in need.
+        </p>
+    </div>
+</div>
+
+<div class="bg-gray-50 py-16">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-900 mb-12">Meet Our Team</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ url_for('static', filename='img/team1.jpg') }}" alt="Team Member 1" class="w-full h-62 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Akhilesh Raja</h3>
+                    <p class="text-base text-blue-600 font-semibold text-center">President</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ url_for('static', filename='img/team2.jpg') }}" alt="Team Member 2" class="w-full h-62 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Akanksha Priyam</h3>
+                    <p class="text-base text-blue-600 font-semibold text-center">Vice President</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ url_for('static', filename='img/team3.jpg') }}" alt="Team Member 3" class="w-full h-62 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray- 1000 mb-1 text-center">Tejas S</h3>
+                    <p class="text-base text-blue-600 font-semibold text-center">Secretary</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ url_for('static', filename='img/team4.jpg') }}" alt="Team Member 4" class="w-full h-62 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Saanvy Azad P</h3>
+                    <p class="text-base text-blue-600 font-semibold text-center">Joint Secretary</p>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+</div>
+
+<div class="bg-gray-50 py-16">
+    <div class="container mx-auto px-6 text-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ url_for('static', filename='img/team5.jpg') }}" alt="Team Member 5" class="w-full h-62 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Madhav K</h3>
+                    <p class="text-base text-blue-600 font-semibold text-center">Treasurer</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ url_for('static', filename='img/team6.jpg') }}" alt="Team Member 6" class="w-full h-62 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Chinmayi Srikanta</h3>
+                    <p class="text-base text-blue-600 font-semibold text-center">Seargent At Arms</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ url_for('static', filename='img/team7.jpg') }}" alt="Team Member 7" class="w-full h-62 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray- 1000 mb-1 text-center">Heamann J Patel</h3>
+                    <p class="text-base text-blue-600 font-semibold text-center">Community Service Director</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ url_for('static', filename='img/team8.jpg') }}" alt="Team Member 8" class="w-full h-62 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Vaishnavi S</h3>
+                    <p class="text-base text-blue-600 font-semibold text-center">Joint Professional Dev Director</p>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+</div>
+{% endblock %}
