@@ -10,7 +10,8 @@ import os # Keep this from the gallery step
 @app.route('/index')
 def home():
     """Renders the home page."""
-    return render_template('index.html')
+    # --- ADD is_home=True ---
+    return render_template('index.html', is_home=True)
 
 @app.route('/about')
 def about():
@@ -18,30 +19,44 @@ def about():
     return render_template('about.html', title='About Us')
 
 # --- ADD THIS NEW GALLERY ROUTE ---
+# giveforgood/routes.py
+import os # Make sure 'os' is imported at the top
+from flask import render_template, url_for, flash # Make sure 'url_for' and 'flash' are imported
+# ... (other imports)
+
+# ... (other routes)
+
+# --- REPLACE YOUR OLD GALLERY FUNCTION WITH THIS ---
 @app.route('/gallery')
 def gallery():
-    """Renders the gallery page."""
-    
-    # 1. Define the path to your image folder on your computer
-    image_folder_path = os.path.join(app.static_folder, 'img')
-    
-    # 2. Get a list of all filenames in that folder
+    """Renders the gallery page with photos and bills."""
     allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif'}
+    
+    # 1. Get Event Photos
+    image_list = []
     try:
+        image_folder_path = os.path.join(app.static_folder, 'img/img')
         image_names = [f for f in os.listdir(image_folder_path) 
                        if os.path.splitext(f)[1].lower() in allowed_extensions]
+        image_list = [url_for('static', filename='img/img/' + name) for name in image_names]
     except FileNotFoundError:
-        # If the /static/img folder doesn't exist, just return an empty list
-        image_names = []
-        flash('Gallery folder not found. Please create /giveforgood/static/img', 'danger')
+        flash('Event photo folder not found.', 'danger')
 
-    # 3. Create the correct WEB URL for each image
-    #    This is the part we are fixing: 'img/' + name
-    image_list = [url_for('static', filename='img/' + name) 
-                  for name in image_names]
+    # 2. Get Bill Images (NEW SECTION)
+    bill_list = []
+    try:
+        bill_folder_path = os.path.join(app.static_folder, 'img/bills')
+        bill_names = [f for f in os.listdir(bill_folder_path) 
+                      if os.path.splitext(f)[1].lower() in allowed_extensions]
+        bill_list = [url_for('static', filename='img/bills/' + name) for name in bill_names]
+    except FileNotFoundError:
+        flash('Bills folder not found. Please create /static/img/bills', 'danger')
 
-    return render_template('gallery.html', title='Gallery', images=image_list)
-# ------------------------------------
+    # 3. Render the template with BOTH lists
+    return render_template('gallery.html', 
+                           title='Gallery', 
+                           images=image_list, 
+                           bills=bill_list)
 
 @app.route('/donate', methods=['GET', 'POST'])
 def donate():
@@ -60,3 +75,16 @@ def donate():
 # def contact():
 #     ...
 #     ...
+
+# ... (all your other imports and routes) ...
+
+@app.route('/dashboard')
+def dashboard():
+    # 1. Query the database to get all donations.
+    #    We use order_by() to show the most recent donations first.
+    all_donations = Donation.query.order_by(Donation.donation_date.desc()).all()
+    
+    # 2. Render a new template and pass the list of donations to it.
+    return render_template('dashboard.html', 
+                           title='Dashboard', 
+                           donations=all_donations)

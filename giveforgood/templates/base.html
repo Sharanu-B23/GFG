@@ -8,19 +8,47 @@
     {% if title %}
         <title>{{ title }} - Give for Good</title>
     {% else %}
-        <title>Welcome - Give for Good</title>
+        <title>Give for Good 4.0</title>
     {% endif %}
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <style>
+
+      body {
+        font-family: 'Montessart', sans-serif;
+      }
+      
+      .font-brand {
+        font-family: 'Dancing Script', cursive;
+      }
+
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+
+<body class="bg-gray-100 text-gray-900" data-is-home="{% if is_home %}true{% else %}false{% endif %}">
 
     <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="{{ url_for('home') }}" class="font-bold text-2xl text-blue-600">Give for Good</a>
+            
+            <a href="{{ url_for('home') }}" id="nav-logo" class="font-brand flex items-center text-3xl transition-colors duration-300">
+                <span>Give for Good 4.</span>
+                    <img src="{{ url_for('static', filename='logo/pink-ribbon.png') }}" 
+                    alt="Cancer Ribbon" 
+                    class="inline-block h-8 w-auto -ml-1 mt-1">
+            </a>
+
+            <img src="{{ url_for('static', filename='img/partner-logos.png') }}" 
+             alt="Partner Logos" 
+             id="nav-partner-logo" 
+             class="h-10 w-auto hidden transition-all duration-300">
+
             <div class="space-x-4" id="nav-links-container">
                 <a href="{{ url_for('home') }}" class="nav-link font-semibold transition-all duration-300">Home</a>
                 <a href="{{ url_for('about') }}" class="nav-link font-semibold transition-all duration-300">About Us</a>
                 <a href="{{ url_for('gallery') }}" class="nav-link font-semibold transition-all duration-300">Gallery</a>
-                
                 <a href="{{ url_for('donate') }}" id="nav-donate-btn" class="font-bold px-4 py-2 rounded-full transition-all duration-300">
                     Donate Now
                 </a>
@@ -44,66 +72,57 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
-        <p>&copy; 2025 Give for Good. All rights reserved.</p>
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 uppercase">About Us</h3>
+                    <p class="text-sm leading-relaxed">
+                        Introducing GIVE FOR GOOD 3.0 &ndash; a Cancer Awareness and Fundraiser Drive in collaboration with Kidwai Memorial Institute of Oncology. Join us over five days to spread awareness, support patients, and inspire hope. Together, we can make a difference!
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 uppercase">Get Connected</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt w-5 pt-1 text-yellow-400"></i>
+                            <span>BMS College of Engineering, Bull Temple Road, Basavanagudi, Bengaluru, Karnataka 560019, India.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope w-5 text-yellow-400"></i>
+                            <a href="mailto:rotaract@bmsce.ac.in" class="hover:text-white transition-colors">rotaract@bmsce.ac.in</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4 uppercase">Socials</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center">
+                            <i class="fab fa-instagram w-5 text-yellow-400"></i>
+                            <a href="https://www.instagram.com/rotaract_bmsce/?hl=en" class="hover:text-yellow-400 transition-colors">Instagram</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-linkedin w-5 text-yellow-400"></i>
+                            <a href="https://in.linkedin.com/company/rotaract-club-of-bmsce" class="hover:text-yellow-400 transition-colors">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+                <p>Copyright &copy;2025 All rights reserved | Made by Devansh and Vinayak with <i class="fas fa-heart text-red-500"></i></p>
+            </div>
+        </div>
     </footer>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            
-            const nav = document.getElementById('main-nav');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const donateBtn = document.getElementById('nav-donate-btn');
-
-            // Function to apply SCROLLED styles (white bg, dark text)
-            function setNavScrolled() {
-                nav.classList.add('bg-white', 'shadow-md');
-                nav.classList.remove('bg-transparent');
-                
-                navLinks.forEach(link => {
-                    link.classList.add('text-gray-700', 'hover:text-blue-600');
-                    link.classList.remove('text-white', 'hover:text-gray-200');
-                });
-
-                donateBtn.classList.add('bg-rose-500', 'text-white', 'hover:bg-rose-600');
-                donateBtn.classList.remove('text-yellow-400', 'hover:text-yellow-300');
-            }
-
-            // Function to apply TOP styles (transparent bg, white text)
-            function setNavTop() {
-                nav.classList.remove('bg-white', 'shadow-md');
-                nav.classList.add('bg-transparent');
-
-                navLinks.forEach(link => {
-                    link.classList.add('text-white', 'hover:text-gray-200');
-                    link.classList.remove('text-gray-700', 'hover:text-blue-600');
-                });
-
-                donateBtn.classList.add('text-yellow-400', 'hover:text-yellow-300');
-                donateBtn.classList.remove('bg-rose-500', 'text-white', 'hover:bg-rose-600');
-            }
-
-            // --- JINJA LOGIC ---
-            // This is the new part that checks the 'is_home' flag
-            // 'is_home' is True ONLY on the homepage.
-            {% if (is_home) %}
-                // This is the homepage. Apply top styles and add scroll listener.
-                setNavTop(); // Set initial transparent state
-                
-                window.addEventListener('scroll', function() {
-                    if (window.scrollY > 50) {
-                        setNavScrolled();
-                    } else {
-                        setNavTop();
-                    }
-                });
-            {% else %}
-                // This is NOT the homepage. Apply scrolled styles immediately.
-                setNavScrolled();
-            {% endif %}
-            // -------------------
-        });
-    </script>
     </body>
+</html>
+
+    <script src="{{ url_for('static', filename='js/fslightbox.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+
+</body>
 </html>

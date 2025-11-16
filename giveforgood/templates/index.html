@@ -21,49 +21,70 @@
         </a>
     </div>
 </div>
-
 <div class="bg-white py-16">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold text-gray-900 mb-6">Who Are We?</h2>
-        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-            Give for Good is a fundraising initiative dedicated to providing support and resources to communities in need.
-        </p>
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="bg-yellow-400 p-14 rounded-lg text-left shadow-lg">
+            <p class="text-3xl font-semibold text-gray-800">Raised Over</p>
+            
+            <div id="counter" class="text-6xl font-bold text-gray-900 my-4" data-target="500000">
+                0
+            </div>
+            
+            <p class="text-3xl font-semibold text-gray-800">Last Year</p>
+            <a href="{{ url_for('donate') }}" class="mt-6 inline-block bg-white text-gray-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100">
+                Donate Now
+            </a>
+        </div>
+
+        <div class="text-left ">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Who Are We?</h2>
+            <p class="text-lg text-gray-700 mb-4">
+                Give for Good is a fundraising initiative by the Rotaract Club of BMSCE, dedicated to supporting cancer patients.
+            </p>
+            <p class="text-lg text-gray-700">
+                Driven by compassion and community spirit, we aim to bring hope and relief to those in need.
+            </p>
+        </div>
+
     </div>
 </div>
 
 <div class="bg-gray-50 py-16">
+    </div>
+
+<div class="bg-gray-50">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-4xl font-bold text-gray-900 mb-12">Meet Our Team</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
 
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='img/team1.jpg') }}" alt="Team Member 1" class="w-full h-62 object-cover object-center">
-                <div class="p-6">
+                <img src="{{ url_for('static', filename='team/team1.jpg') }}" alt="Team Member 1" class="w-full h-62 object-cover object-center">
+                <div class="p-4">
                     <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Akhilesh Raja</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">President</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='img/team2.jpg') }}" alt="Team Member 2" class="w-full h-62 object-cover object-center">
-                <div class="p-6">
+                <img src="{{ url_for('static', filename='team/team2.jpg') }}" alt="Team Member 2" class="w-full h-62 object-cover object-center">
+                <div class="p-4">
                     <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Akanksha Priyam</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">Vice President</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='img/team3.jpg') }}" alt="Team Member 3" class="w-full h-62 object-cover object-center">
-                <div class="p-6">
+                <img src="{{ url_for('static', filename='team/team3.jpg') }}" alt="Team Member 3" class="w-full h-62 object-cover object-center">
+                <div class="p-4">
                     <h3 class="text-xl font-bold text-gray- 1000 mb-1 text-center">Tejas S</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">Secretary</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='img/team4.jpg') }}" alt="Team Member 4" class="w-full h-62 object-cover object-center">
-                <div class="p-6">
+                <img src="{{ url_for('static', filename='team/team4.jpg') }}" alt="Team Member 4" class="w-full h-62 object-cover object-center">
+                <div class="p-4">
                     <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Saanvy Azad P</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">Joint Secretary</p>
                 </div>
@@ -78,32 +99,32 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
 
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='img/team5.jpg') }}" alt="Team Member 5" class="w-full h-62 object-cover object-center">
-                <div class="p-6">
+                <img src="{{ url_for('static', filename='team/team5.jpg') }}" alt="Team Member 5" class="w-full h-62 object-cover object-center">
+                <div class="p-4">
                     <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Madhav K</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">Treasurer</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='img/team6.jpg') }}" alt="Team Member 6" class="w-full h-62 object-cover object-center">
-                <div class="p-6">
+                <img src="{{ url_for('static', filename='team/team6.jpg') }}" alt="Team Member 6" class="w-full h-62 object-cover object-center">
+                <div class="p-4">
                     <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Chinmayi Srikanta</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">Seargent At Arms</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='img/team7.jpg') }}" alt="Team Member 7" class="w-full h-62 object-cover object-center">
-                <div class="p-6">
+                <img src="{{ url_for('static', filename='team/team7.jpg') }}" alt="Team Member 7" class="w-full h-62 object-cover object-center">
+                <div class="p-4">
                     <h3 class="text-xl font-bold text-gray- 1000 mb-1 text-center">Heamann J Patel</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">Community Service Director</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='img/team8.jpg') }}" alt="Team Member 8" class="w-full h-62 object-cover object-center">
-                <div class="p-6">
+                <img src="{{ url_for('static', filename='team/team8.jpg') }}" alt="Team Member 8" class="w-full h-62 object-cover object-center">
+                <div class="p-4">
                     <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Vaishnavi S</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">Joint Professional Dev Director</p>
                 </div>
