@@ -3,56 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     
     {% if title %}
         <title>{{ title }} - Give for Good</title>
     {% else %}
-        <title>Give for Good 4.0</title>
+        <title>Welcome - Give for Good</title>
     {% endif %}
+
+    <script src="https://cdn.tailwindcss.com"></script>
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
     <style>
-
-      body {
-        font-family: 'Montessart', sans-serif;
-      }
+      body { font-family: 'Poppins', sans-serif; }
+      .font-brand { font-family: 'Dancing Script', cursive; }
       
-      .font-brand {
-        font-family: 'Dancing Script', cursive;
-      }
-
+      /* Safety style to force images to behave if Tailwind takes a second to load */
+      .ribbon-icon { height: 32px !important; width: auto !important; }
+      .partner-icon { height: 40px !important; width: auto !important; }
     </style>
 </head>
 
 <body class="bg-gray-100 text-gray-900" data-is-home="{% if is_home %}true{% else %}false{% endif %}">
 
     <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center relative">
             
-            <a href="{{ url_for('home') }}" id="nav-logo" class="font-brand flex items-center text-3xl transition-colors duration-300">
+            <a href="{{ url_for('home') }}" id="nav-logo" class="font-brand flex items-center text-2xl md:text-3xl transition-colors duration-300 z-50 no-underline">
                 <span>Give for Good 4.</span>
-                    <img src="{{ url_for('static', filename='logo/pink-ribbon.png') }}" 
-                    alt="Cancer Ribbon" 
-                    class="inline-block h-8 w-auto -ml-1 mt-1">
+                <img src="{{ url_for('static', filename='logo/pink-ribbon.png') }}" 
+                     alt="Cancer Ribbon" 
+                     class="inline-block h-6 md:h-8 w-auto -ml-1 mt-1 ribbon-icon"
+                     style="height: 30px; width: auto;">
             </a>
 
-            <img src="{{ url_for('static', filename='img/partner-logos.png') }}" 
-             alt="Partner Logos" 
-             id="nav-partner-logo" 
-             class="h-10 w-auto hidden transition-all duration-300">
+            <div class="hidden md:block">
+                <img src="{{ url_for('static', filename='img/partner-logos.png') }}" 
+                     alt="Partner Logos" 
+                     id="nav-partner-logo" 
+                     class="h-10 w-auto hidden transition-all duration-300 partner-icon"
+                     style="height: 40px; width: auto;">
+            </div>
 
-            <div class="space-x-4" id="nav-links-container">
-                <a href="{{ url_for('home') }}" class="nav-link font-semibold transition-all duration-300">Home</a>
+            <div class="hidden md:flex space-x-4" id="nav-links-container">
+                <a href="{{ url_for('home') }}" class="nav-link font-semibold justify-between duration-300">Home</a>
                 <a href="{{ url_for('about') }}" class="nav-link font-semibold transition-all duration-300">About Us</a>
                 <a href="{{ url_for('gallery') }}" class="nav-link font-semibold transition-all duration-300">Gallery</a>
-                <a href="https://forms.gle/az7HN9mdUci1Ngzr8" target="_blank" id="nav-donate-btn" class="font-bold px-4 py-2 rounded-full transition-all duration-300">
+                <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" id="nav-donate-btn" class="font-bold px-4 py-2 rounded-full transition-all duration-300">
                     Donate Now
                 </a>
             </div>
+
+            <button id="mobile-menu-btn" class="md:hidden focus:outline-none z-50 text-white transition-colors duration-300">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex flex-col items-center py-6 space-y-6">
+            <a href="{{ url_for('home') }}" class="text-gray-800 font-semibold text-lg hover:text-blue-600">Home</a>
+            <a href="{{ url_for('about') }}" class="text-gray-800 font-semibold text-lg hover:text-blue-600">About Us</a>
+            <a href="{{ url_for('gallery') }}" class="text-gray-800 font-semibold text-lg hover:text-blue-600">Gallery</a>
+            <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="bg-blue-600 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-700">
+                Donate Now
+            </a>
         </div>
     </nav>
 
@@ -72,56 +90,45 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="bg-gray-800 text-gray-300 py-12">
+    <footer class="bg-gray-800 text-gray-300 py-12 mt-12">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                
                 <div>
-                    <h3 class="text-xl font-semibold text-white mb-4 uppercase">About Us</h3>
-                    <p class="text-base leading-relaxed">
-                        Introducing GIVE FOR GOOD 3.0 &ndash; a Cancer Awareness and Fundraiser Drive in collaboration with Kidwai Memorial Institute of Oncology. Join us over five days to spread awareness, support patients, and inspire hope. Together, we can make a difference!
+                    <h3 class="text-lg font-semibold text-white mb-4 uppercase">About Us</h3>
+                    <p class="text-sm leading-relaxed">
+                        Introducing GIVE FOR GOOD 3.0 &ndash; a Cancer Awareness and Fundraiser Drive. Join us to spread awareness and inspire hope.
                     </p>
                 </div>
-
                 <div>
-                    <h3 class="text-xl font-semibold text-white mb-4 uppercase">Get Connected</h3>
-                    <ul class="space-y-4 text-base">
+                    <h3 class="text-lg font-semibold text-white mb-4 uppercase">Get Connected</h3>
+                    <ul class="space-y-4 text-sm">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt w-5 pt-1 text-yellow-400"></i>
-                            <span> BMS College of Engineering, Bull Temple Road, Basavanagudi, Bengaluru, Karnataka 560019, India.</span>
+                            <span>BMS College of Engineering, Bengaluru, India.</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope w-5 text-yellow-400"></i>
-                            <a href="mailto:rotaract@bmsce.ac.in" class="hover:text-white transition-colors">rotaract@bmsce.ac.in</a>
+                            <a href="mailto:rotaract@bmsce.ac.in" class="hover:text-white">rotaract@bmsce.ac.in</a>
                         </li>
                     </ul>
                 </div>
-
                 <div>
-                    <h3 class="text-xl font-semibold text-white mb-4 uppercase">Socials</h3>
-                    <ul class="space-y-3 text-base">
+                    <h3 class="text-lg font-semibold text-white mb-4 uppercase">Socials</h3>
+                    <ul class="space-y-3 text-sm">
                         <li class="flex items-center">
                             <i class="fab fa-instagram w-5 text-yellow-400"></i>
-                            <a href="https://www.instagram.com/rotaract_bmsce/?hl=en" class="hover:text-yellow-400 transition-colors">Instagram</a>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fab fa-linkedin w-5 text-yellow-400"></i>
-                            <a href="https://in.linkedin.com/company/rotaract-club-of-bmsce" class="hover:text-yellow-400 transition-colors">LinkedIn</a>
+                            <a href="#" class="hover:text-white">Instagram</a>
                         </li>
                     </ul>
                 </div>
             </div>
-
             <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
-                <p>Copyright &copy;2025 All rights reserved </i></p>
+                <p>Copyright &copy;2025 All rights reserved | Made by Devansh and Vinayak</p>
             </div>
         </div>
     </footer>
-    </body>
-</html>
 
-    <script src="{{ url_for('static', filename='js/fslightbox.js') }}"></script>
-
+    <script src="{{ url_for('static', filename='js/fslightbox.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 
 </body>
