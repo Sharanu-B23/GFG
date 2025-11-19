@@ -50,9 +50,9 @@
             </div>
 
             <div class="hidden md:flex space-x-4" id="nav-links-container">
-                <a href="{{ url_for('home') }}" class="nav-link font-semibold justify-between duration-300">Home</a>
-                <a href="{{ url_for('about') }}" class="nav-link font-semibold transition-all duration-300">About Us</a>
-                <a href="{{ url_for('gallery') }}" class="nav-link font-semibold transition-all duration-300">Gallery</a>
+                <a href="{{ url_for('home') }}" class="nav-link font-semibold duration-300 mt-2">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link font-semibold transition-all duration-300 mt-2">About Us</a>
+                <a href="{{ url_for('gallery') }}" class="nav-link font-semibold transition-all duration-300 mt-2">Gallery</a>
                 <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" id="nav-donate-btn" class="font-bold px-4 py-2 rounded-full transition-all duration-300">
                     Donate Now
                 </a>
@@ -128,7 +128,7 @@
         </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/fslightbox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fslightbox.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 
 </body>
