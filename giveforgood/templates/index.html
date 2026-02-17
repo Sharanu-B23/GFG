@@ -59,17 +59,45 @@
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-4xl font-bold text-gray-900 mb-12">Meet Our Team</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
 
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img src="{{ url_for('static', filename='team/team1.jpg') }}" alt="Team Member 1" class="w-full h-62 object-cover object-center">
                 <div class="p-4">
                     <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Akhilesh Raja</h3>
                     <p class="text-base text-blue-600 font-semibold text-center">President</p>
                 </div>
+            </div> -->
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team1.jpg') }}"alt="Team Member 1" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Akhilesh Raja</h3>
+                    <p class="text-blue-600 font-medium">President</p>
+                </div>
+            </div>
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team2.jpg') }}"alt="Team Member 2" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Akanksha Priyam</h3>
+                    <p class="text-blue-600 font-medium">Vice President</p>
+                </div>
+            </div>
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team3.jpg') }}"alt="Team Member 3" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Tejas S</h3>
+                    <p class="text-blue-600 font-medium">Secretary</p>
+                </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+
+            <!-- <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img src="{{ url_for('static', filename='team/team2.jpg') }}" alt="Team Member 2" class="w-full h-62 object-cover object-center">
                 <div class="p-4">
                     <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Akanksha Priyam</h3>
@@ -92,48 +120,80 @@
                     <p class="text-base text-blue-600 font-semibold text-center">Joint Secretary</p>
                 </div>
             </div>
-            
+             -->
             </div>
     </div>
 </div>
-
-<div class="bg-gray-50 py-16">
+<div class="bg-gray-50">
     <div class="container mx-auto px-6 text-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
 
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='team/team5.jpg') }}" alt="Team Member 5" class="w-full h-62 object-cover object-center">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Madhav K</h3>
-                    <p class="text-base text-blue-600 font-semibold text-center">Treasurer</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team4.jpg') }}"alt="Team Member 4" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Saanvy Azad P</h3>
+                    <p class="text-blue-600 font-medium">Joint Secretary</p>
                 </div>
             </div>
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team5.jpg') }}"alt="Team Member 5" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
 
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='team/team6.jpg') }}" alt="Team Member 6" class="w-full h-62 object-cover object-center">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Chinmayi Srikanta</h3>
-                    <p class="text-base text-blue-600 font-semibold text-center">Seargent At Arms</p>
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Madhav K</h3>
+                    <p class="text-blue-600 font-medium">Treasurer</p>
                 </div>
             </div>
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team6.jpg') }}"alt="Team Member 6" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
 
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='team/team7.jpg') }}" alt="Team Member 7" class="w-full h-62 object-cover object-center">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-gray- 1000 mb-1 text-center">Heamann J Patel</h3>
-                    <p class="text-base text-blue-600 font-semibold text-center">Community Service Director</p>
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Chinmayi Srikanta</h3>
+                    <p class="text-blue-600 font-medium">Seargent At Arms</p>
                 </div>
             </div>
-
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ url_for('static', filename='team/team8.jpg') }}" alt="Team Member 8" class="w-full h-62 object-cover object-center">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-gray-1000 mb-1 text-center">Vaishnavi S</h3>
-                    <p class="text-base text-blue-600 font-semibold text-center">Joint Professional Dev Director</p>
-                </div>
-            </div>
-            
             </div>
     </div>
 </div>
+<div class="bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team7.jpg') }}"alt="Team Member 7" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Heamann J Patel</h3>
+                    <p class="text-blue-600 font-medium">Project Chair</p>
+                </div>
+            </div>
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team 8.jpg') }}"alt="Team Member 8" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Sharanabasappa Biradar</h3>
+                    <p class="text-blue-600 font-medium">Project Chair</p>
+                </div>
+            </div>
+            <div class="group bg-white rounded-2xl shadow-md overflow-hidden
+            hover:shadow-xl transition duration-300 text-center">
+                <img src="{{ url_for('static', filename='team/team9.jpg') }}"alt="Team Member 9" class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-900">Vaishnavi S</h3>
+                    <p class="text-blue-600 font-medium">Project Chair</p>
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
+
+
 {% endblock %}

@@ -13,7 +13,7 @@
             {% for img_url in images %}
             <div class="rounded-lg overflow-hidden shadow-md group bg-black">
                 <a href="{{ img_url }}" data-fslightbox="gallery" class="cursor-zoom-in">
-                    <img src="{{ img_url }}" alt="Gallery Image" class="w-full h-64 object-contain transition-transform duration-300 group-hover:scale-105">
+                    <img src="{{ img_url }}" alt="Gallery Image" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                 </a>
             </div>
             {% endfor %}
