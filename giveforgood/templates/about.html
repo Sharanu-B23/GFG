@@ -1,21 +1,243 @@
 {% extends "base.html" %}
 
 {% block content %}
+<section class="section section-bg-light pt-nav">
+    <div class="container">
 
-<div class="container mx-auto px-6 pt-24">
-    <div class="bg-white p-10 rounded-lg shadow-lg">
-        <h1 class="text-4xl font-bold mb-6">About Us</h1>
-        <div class="text-lg text-gray-700 space-y-4">
-            <p><strong>Give for Good</strong> is a non-profit organization dedicated to providing support and resources to communities in need. We believe that everyone deserves a chance to thrive.</p>
-            <p>Our mission is built on three core pillars:</p>
-            <ul class="list-disc list-inside ml-4 space-y-2">
-                <li><strong>Education:</strong> Providing access to quality education for underprivileged children.</li>
-                <li><strong>Health:</strong> Funding medical supplies and healthcare services in remote areas.</li>
-                <li><strong>Community:</strong> Building sustainable infrastructure and support systems.</li>
-            </ul>
-            <p>Our team is composed of passionate volunteers and dedicated professionals who work tirelessly to make a positive impact.</p>
+        <!-- About Rotaract BMSCE -->
+        <div class="content-box"
+            style="margin-top: 2rem; margin-bottom: 4rem; position: relative; overflow: hidden;">
+            <div
+                style="position: absolute; top: -30px; left: -10px; font-size: 15rem; color: rgba(225, 29, 72, 0.04); font-family: var(--font-brand); line-height: 1; user-select: none;">
+                &#10077;</div>
+            <h1 class="section-title font-brand text-center"
+                style="margin-bottom: 2rem; position: relative; z-index: 1;">About Rotaract BMSCE</h1>
+            <div
+                style="color: var(--text-secondary); font-size: 1.15rem; max-width: 850px; margin: 0 auto; line-height: 1.9; position: relative; z-index: 1; text-align: center;">
+                <p>Since its chartering in 2014 under the Rotary Club of Banashankari, the Rotaract Club of BMS College
+                    of Engineering has built a decade-long legacy of service, leadership, and community impact.
+                    Operating under R.I. District 3191, the club has grown into one of the most active Rotaract clubs in
+                    the region, driven by the belief that young people have the power to bring about meaningful change.
+                    Over the years, the club has touched lives through a range of initiatives spanning health,
+                    education, and community service such as <strong style="color: var(--accent-primary);">Give for
+                        Good</strong>, a cancer fundraising drive, <strong
+                        style="color: var(--accent-primary);">iTeach</strong>, a peer
+                    education programme, <strong style="color: var(--accent-primary);">Rotech</strong>, an annual
+                    hackathon, <strong style="color: var(--accent-primary);">Kali Kannada</strong>, a Kannada language
+                    outreach
+                    initiative, <strong style="color: var(--accent-primary);">Khushiyon Ka Dabba</strong>, a weekly food
+                    redistribution drive, and <strong style="color: var(--accent-primary);">Youth Parliament</strong>, a
+                    platform
+                    for civic engagement among students. Each initiative reflects the club's commitment to addressing
+                    real needs, on campus and beyond. Guided by the Rotaract motto of "Service Above Self",
+                    Rotaract BMSCE continues to inspire a generation of socially conscious leaders, carrying forward a
+                    legacy that grows stronger with every passing year.</p>
+            </div>
+
+            <!-- Masterband / Partner Logos -->
+            <div class="text-center" style="margin-top: 3rem;">
+                <img src="{{ url_for('static', filename='img/partner-logos.png') }}" alt="Partner Logos"
+                    style="max-height: 80px; margin: 0 auto;">
+            </div>
+        </div>
+
+        <!-- About GFG -->
+        <div class="content-box">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <p
+                    style="color: var(--accent-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">
+                    Our Flagship Initiative</p>
+                <h2 class="section-title font-brand" style="margin-bottom: 0;">About GFG</h2>
+            </div>
+
+            <div
+                style="color: var(--text-secondary); font-size: 1.15rem; max-width: 850px; margin: 0 auto 4rem auto; line-height: 1.9; text-align: center;">
+                <p>Give for Good is the Rotaract Club of BMSCE's flagship cancer awareness and fundraising initiative,
+                    run annually to support underprivileged cancer patients with their medical expenses. Each edition
+                    brings together volunteers, students, and the wider community through a series of on-ground
+                    activities including walkathons, open mic sessions, flash mobs, and public fundraising drives
+                    alongside a dedicated website to ensure transparency and ease of contribution. The initiative
+                    concludes each year with a closing ceremony that celebrates volunteer efforts and features talks by
+                    medical professionals and awareness advocates.</p>
+                <p style="margin-top: 1.5rem; font-style: italic; color: var(--bg-dark);">The initiative has seen
+                    consistent growth over the years, reflecting both the club's commitment and the community's trust:
+                </p>
+            </div>
+
+            <!-- GFG Impact Stats Grid -->
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
+
+                <div style="background: linear-gradient(135deg, #ffffff, #fff0f2); border: 1px solid rgba(225, 29, 72, 0.1); border-radius: 1.5rem; padding: 2.5rem 1.5rem; text-align: center; box-shadow: var(--shadow-md); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)'">
+                    <p
+                        style="color: var(--accent-primary); font-weight: 700; font-size: 1.25rem; margin-bottom: 0.5rem;">
+                        GFG 1.0 <br><span
+                            style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;">(2022&ndash;23)</span>
+                    </p>
+                    <h3 class="font-brand" style="color: var(--bg-dark); font-size: 2.5rem; margin: 0.5rem 0;">
+                        &#8377;2.3L</h3>
+                    <p
+                        style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+                        Raised</p>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #ffffff, #fff0f2); border: 1px solid rgba(225, 29, 72, 0.1); border-radius: 1.5rem; padding: 2.5rem 1.5rem; text-align: center; box-shadow: var(--shadow-md); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)'">
+                    <p
+                        style="color: var(--accent-primary); font-weight: 700; font-size: 1.25rem; margin-bottom: 0.5rem;">
+                        GFG 2.0 <br><span
+                            style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;">(2023&ndash;24)</span>
+                    </p>
+                    <h3 class="font-brand" style="color: var(--bg-dark); font-size: 2.5rem; margin: 0.5rem 0;">
+                        &#8377;2.7L</h3>
+                    <p
+                        style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+                        Raised</p>
+                </div>
+
+                <div style="background: linear-gradient(135deg, var(--accent-primary), #be123c); border-radius: 1.5rem; padding: 2.5rem 1.5rem; text-align: center; box-shadow: 0 15px 30px rgba(225, 29, 72, 0.25); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); color: white; position: relative; overflow: hidden;"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(225, 29, 72, 0.3)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 30px rgba(225, 29, 72, 0.25)'">
+                    <div
+                        style="position: absolute; top: -20px; right: -20px; font-size: 8rem; color: rgba(255, 255, 255, 0.1);">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <p
+                        style="font-weight: 700; font-size: 1.25rem; margin-bottom: 0.5rem; color: #ffe4e6; position: relative; z-index: 1;">
+                        GFG 3.0 <br><span
+                            style="font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.8);">(2024&ndash;25)</span>
+                    </p>
+                    <h3 class="font-brand"
+                        style="font-size: 2.5rem; margin: 0.5rem 0; color: white; position: relative; z-index: 1;">
+                        &#8377;3.0L</h3>
+                    <p
+                        style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: #ffe4e6; position: relative; z-index: 1;">
+                        Raised</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section section-bg-white">
+    <div class="container text-center">
+        <h2 class="section-title font-brand" style="margin-bottom: 1rem;">Team GFG 4.0</h2>
+        <p style="color:var(--text-secondary); font-size:1.1rem; max-width:600px; margin:0 auto 3rem auto;">The
+            dedicated individuals making Give for Good possible.</p>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team1.jpg') }}" alt="Akhilesh Raja"
+                        class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Akhilesh Raja</h3>
+                    <p class="team-role">President</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team2.jpg') }}" alt="Akanksha Priyam"
+                        class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Akanksha Priyam</h3>
+                    <p class="team-role">Vice President</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team3.jpg') }}" alt="Tejas S" class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Tejas S</h3>
+                    <p class="team-role">Secretary</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team4.jpg') }}" alt="Saanvy Azad P"
+                        class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Saanvy Azad P</h3>
+                    <p class="team-role">Joint Secretary</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team5.jpg') }}" alt="Madhav K" class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Madhav K</h3>
+                    <p class="team-role">Treasurer</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team6.jpg') }}" alt="Chinmayi Srikanta"
+                        class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Chinmayi Srikanta</h3>
+                    <p class="team-role">Seargent At Arms</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team7.jpg') }}" alt="Heamann J Patel"
+                        class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Heamann J Patel</h3>
+                    <p class="team-role">Project Chair</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team 8.jpg') }}" alt="Sharanabasappa Biradar"
+                        class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Sharanabasappa Biradar</h3>
+                    <p class="team-role">Project Chair</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="{{ url_for('static', filename='team/team9.jpg') }}" alt="Vaishnavi S" class="team-image">
+                    <div class="team-overlay"></div>
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Vaishnavi S</h3>
+                    <p class="team-role">Project Chair</p>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+</section>
 
 {% endblock %}

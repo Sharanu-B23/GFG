@@ -29,10 +29,9 @@ from flask import render_template, url_for, flash # Make sure 'url_for' and 'fla
 # --- REPLACE YOUR OLD GALLERY FUNCTION WITH THIS ---
 @app.route('/gallery')
 def gallery():
-    """Renders the gallery page with photos and bills."""
-    allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif'}
+    allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.heif'}
     
-    # 1. Get Event Photos
+    # 1. Fetch Event Photos
     image_list = []
     try:
         image_folder_path = os.path.join(app.static_folder, 'img/img')
@@ -42,7 +41,7 @@ def gallery():
     except FileNotFoundError:
         flash('Event photo folder not found.', 'danger')
 
-    # 2. Get Bill Images (NEW SECTION)
+    # 2. Fetch Bills
     bill_list = []
     try:
         bill_folder_path = os.path.join(app.static_folder, 'img/bills')
@@ -50,13 +49,9 @@ def gallery():
                       if os.path.splitext(f)[1].lower() in allowed_extensions]
         bill_list = [url_for('static', filename='img/bills/' + name) for name in bill_names]
     except FileNotFoundError:
-        flash('Bills folder not found. Please create /static/img/bills', 'danger')
+        pass
 
-    # 3. Render the template with BOTH lists
-    return render_template('gallery.html', 
-                           title='Gallery', 
-                           images=image_list, 
-                           bills=bill_list)
+    return render_template('gallery.html', title='Our Impact', images=image_list, bills=bill_list)
 
 @app.route('/donate', methods=['GET', 'POST'])
 def donate():

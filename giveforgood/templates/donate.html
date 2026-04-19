@@ -1,45 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-    <h1 class="text-3xl font-bold mb-6 text-center">Make a Donation</h1>
-    
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
+<section class="section section-bg-light" style="padding-top: 8rem; min-height: 100vh;">
+    <div class="container">
+        <div class="form-container text-center">
+            <h1 class="section-title font-brand" style="margin-bottom: 0.5rem;">Support the Cause</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Every contribution brings hope.</p>
+            
+            <form method="POST" action="" style="text-align: left;">
+                {{ form.hidden_tag() }}
 
-        <div class="mb-4">
-            {{ form.name.label(class="block text-gray-700 font-semibold mb-2") }}
-            {{ form.name(class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500", placeholder="Your Full Name") }}
-            {% for error in form.name.errors %}
-                <span class="text-red-500 text-sm">{{ error }}</span>
-            {% endfor %}
-        </div>
+                <div class="form-group">
+                    {{ form.name.label(class="form-label") }}
+                    {{ form.name(class="form-input", placeholder="Your Full Name") }}
+                    {% for error in form.name.errors %}
+                        <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
 
-        <div class="mb-4">
-            {{ form.email.label(class="block text-gray-700 font-semibold mb-2") }}
-            {{ form.email(class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500", placeholder="your@email.com") }}
-            {% for error in form.email.errors %}
-                <span class="text-red-500 text-sm">{{ error }}</span>
-            {% endfor %}
-        </div>
-        
-        <div class="mb-4"> {{ form.amount.label(class="block text-gray-700 font-semibold mb-2") }}
-            {{ form.amount(class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500", placeholder="e.g., 50") }}
-            {% for error in form.amount.errors %}
-                <span class="text-red-500 text-sm">{{ error }}</span>
-            {% endfor %}
-        </div>
+                <div class="form-group">
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-input", placeholder="your@email.com") }}
+                    {% for error in form.email.errors %}
+                        <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group"> 
+                    {{ form.amount.label(class="form-label") }}
+                    {{ form.amount(class="form-input", placeholder="e.g., 50") }}
+                    {% for error in form.amount.errors %}
+                        <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
 
-        <div class="mb-6">
-            {{ form.message.label(class="block text-gray-700 font-semibold mb-2") }}
-            {{ form.message(class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500", rows=3, placeholder="Leave a note with your donation...") }}
-            {% for error in form.message.errors %}
-                <span class="text-red-500 text-sm">{{ error }}</span>
-            {% endfor %}
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    {{ form.message.label(class="form-label") }}
+                    {{ form.message(class="form-input", rows=3, placeholder="Leave a note with your donation...") }}
+                    {% for error in form.message.errors %}
+                        <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div>
+                    {{ form.submit(class="btn btn-primary", style="width: 100%; font-size: 1.125rem;") }}
+                </div>
+            </form>
         </div>
-        <div>
-            {{ form.submit(class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 cursor-pointer") }}
-        </div>
-    </form>
-</div>
+    </div>
+</section>
 {% endblock %}

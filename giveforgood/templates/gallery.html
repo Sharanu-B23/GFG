@@ -1,125 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container mx-auto px-6 pt-24">
-    <div class="bg-white p-10 rounded-lg shadow-lg">
+<section class="section section-bg-light pt-nav" style="min-height: 100vh;">
+    <div class="container">
         
-        <h1 class="text-4xl font-bold mb-8 text-center">Our Gallery</h1>
-        <p class="text-lg text-gray-700 mb-8 text-center">
-            From collective efforts to shared smiles, explore the people, contributions, and moments that define Give For Good.
-        </p>
+        <header class="text-center" style="margin-bottom: 4rem;">
+            <h1 class="section-title font-brand">Our Impact</h1>
+            <p style="color: var(--text-secondary); font-size: 1.125rem;">Capturing moments of hope, awareness, and community impact.</p>
+        </header>
 
-       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"> 
-    {% for img_url in images %}
-    <div class="rounded-lg overflow-hidden shadow-md group bg-black">
-
-        <a href="{{ img_url }}" data-fslightbox="gallery"
-           class="cursor-zoom-in block overflow-hidden">
-
-            <img src="{{ img_url }}" alt="Gallery Image"
-                 class="w-full h-64 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110">
-        </a>
-
-    </div>
-    {% endfor %}
-</div>
-
-        <hr class="my-12 border-t border-gray-200"> <h2 class="text-3xl font-bold mt-12 mb-6 text-center">Our Transparency - Donation Bills</h2>
-        <p class="text-lg text-gray-700 mb-8 text-center">
-            Here are the bills from our previous donation drives. Every receipt tells a story of trust, ensuring complete transparency in our giving.
-        </p>
-        <!-- FIRST 8 IMAGES -->
-<div class="grid grid-cols-4 gap-10 max-w-7xl mx-auto mb-20">
-    {% for bill_url in bills[:8] %}
-    <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 bg-white border border-gray-200 group">
-        <a href="{{ bill_url }}" data-fslightbox="bills"
-           class="bg-gray-50 h-96 flex items-center justify-center">
-            
-            <img src="{{ bill_url }}" alt="Donation Bill"
-                 class="max-h-88 object-contain transition-transform duration-300 group-hover:scale-105">
-        </a>
-    </div>
-    {% endfor %}
-</div>
-
-<!-- LAST 3 IMAGES -->
-<div class="grid grid-cols-3 gap-16 max-w-7xl mx-auto">
-    {% for bill_url in bills[8:] %}
-    <div class="rounded-xl overflow-hidden shadow-xl transition duration-300 bg-white border border-gray-200 group">
-        <a href="{{ bill_url }}" data-fslightbox="bills"
-           class="bg-gray-50 h-[420px] flex items-center justify-center">
-            
-            <img src="{{ bill_url }}" alt="Donation Bill"
-                 class="max-h-[380px] object-contain transition-transform duration-300 group-hover:scale-105">
-        </a>
-    </div>
-    {% endfor %}
-</div>
-
-<!-- LAST 3 IMAGES -->
-<!-- <div class="grid grid-cols-4 gap-12 max-w-7xl mx-auto">
-    {% for bill_url in bills[8:] %}
-    <div class="col-span-4 md:col-span-2 lg:col-span-4/3 rounded-xl overflow-hidden shadow-xl transition duration-300 bg-white border border-gray-200 group">
-        <a href="{{ bill_url }}" data-fslightbox="bills"
-           class="bg-gray-50 h-[420px] flex items-center justify-center">
-            
-            <img src="{{ bill_url }}" alt="Donation Bill"
-                 class="max-h-[380px] object-contain transition-transform duration-300 group-hover:scale-105">
-        </a>
-    </div>
-    {% endfor %}
-</div> -->
-        <!-- <div class="grid grid-cols-4 gap-6 max-w-6xl mx-auto"> -->
-
-  {% for bill_url in bills %}
-  <!-- <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 bg-white border border-gray-100 group">
-    <a href="{{ bill_url }}" data-fslightbox="bills"
-       class="bg-gray-50 h-64 flex items-center justify-center">
-        
-        <img src="{{ bill_url }}" alt="Donation Bill"
-             class="max-h-56 object-contain transition-transform duration-300 group-hover:scale-105">
-    </a>
-</div> -->
-  <!-- <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 bg-white border border-gray-100 group">
-
-    <a href="{{ bill_url }}" data-fslightbox="bills"
-       class="bg-gray-50 h-48 flex items-center justify-center">
-
-      <img src="{{ bill_url }}" alt="Donation Bill"
-           class="h-full w-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
-
-    </a>
-
-  </div> -->
-  {% endfor %}
-
-  {% if not bills %}
-  <p class="text-center col-span-full">No bills have been uploaded yet.</p>
-  {% endif %}
-</div>
-
-
-</div>
-
-<!-- 
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            
-            {% for bill_url in bills %}
-            <div class="rounded-lg overflow-hidden shadow-md group bg-white border border-gray-200">
-                <a href="{{ bill_url }}" data-fslightbox="bills" class="cursor-zoom-in">
-                    <img src="{{ bill_url }}" alt="Donation Bill" class="w-full h-80 object-contain p-2 transition-transform duration-300 group-hover:scale-105">
+        <div class="gallery-grid">
+            {% for img_url in images %}
+            <div>
+                <a href="{{ img_url }}" data-fslightbox="gallery" class="gallery-item">
+                    <img src="{{ img_url }}" alt="Event Image" class="gallery-img" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-icon-glass">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
                 </a>
             </div>
             {% endfor %}
+        </div>
 
-            {% if not bills %}
-            <p class="text-center col-span-full">No bills have been uploaded yet.</p>
-            {% endif %}
-        </div> -->
-        <!-- <h2 class="text-3xl font-bold mt-12 mb-6 text-center">Videos</h2>
-        <p class="text-lg text-gray-700 mb-8 text-center">
-            Check back soon to see videos of our work in action!
-        </p> -->
+        <div class="text-center" style="margin-top: 6rem; margin-bottom: 3rem;">
+            <h2 class="section-title font-brand text-center" style="margin-bottom: 1rem;">Financial Transparency</h2>
+            <div style="height: 4px; width: 80px; background-color: var(--accent-primary); margin: 0 auto; border-radius: 9999px;"></div>
+            <p style="color: var(--text-secondary); font-size: 1.125rem; margin-top: 1.5rem;">Verification of every contribution used for the cause.</p>
+        </div>
+
+        <div class="gallery-grid">
+            {% for bill_url in bills %}
+            <div>
+                <a href="{{ bill_url }}" data-fslightbox="bills" class="gallery-item" style="border: 1px solid rgba(0,0,0,0.05);">
+                    <img src="{{ bill_url }}" alt="Donation Bill" class="gallery-img" style="border-radius: 0.5rem; filter: grayscale(100%); transition: filter 0.5s ease;" loading="lazy">
+                    <style>
+                        .gallery-item:hover .gallery-img {
+                            filter: grayscale(0%);
+                        }
+                    </style>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
     </div>
-</div>
+</section>
 {% endblock %}
