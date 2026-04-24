@@ -8,7 +8,7 @@ class Config:
     
     # --- CHANGE THIS LINE ---
     # We are replacing 'mysql+mysqlclient' with 'mysql+pymysql'
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:sharan@127.0.0.1:3306/giveforgood_db'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql+pymysql://root:sharan@127.0.0.1:3306/giveforgood_db'
     # ------------------------
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
