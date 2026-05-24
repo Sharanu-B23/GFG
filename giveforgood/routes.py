@@ -83,3 +83,7 @@ def dashboard():
     return render_template('dashboard.html', 
                            title='Dashboard', 
                            donations=all_donations)
+
+@app.route('/health')
+def health():
+    return "OK", 200
